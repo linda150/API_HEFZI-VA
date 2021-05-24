@@ -41,11 +41,12 @@ exports.create = (req, res) => {
  * @param {*} res => Todos lo que nosotros le vamos a devolver al usuario
  */
 exports.findAll = (req, res) => {
+    console.log('api')
     clienteModel.find({})
     .populate('canasta')
     .exec()
     .then(
-        clientes => {
+        (clientes) => {
             res.send(clientes)
         }
     ).catch(

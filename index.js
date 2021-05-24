@@ -1,5 +1,6 @@
 const express = require('express') /*require muestra que requerimos y utilizamos algo, en este caso express */
 const bodyParser = require ('body-parser')
+const cors = require('cors') //Seguridad que uno le da a los proyectos
 
 
 const {connectToDB} = require ('./db')
@@ -8,6 +9,7 @@ const {connectToDB} = require ('./db')
 
 const app = express () /*Convertimos en un objeto para utilizar todas las herramientas que tiene */
 
+app.use(cors)
 app.use(bodyParser.json())
 connectToDB()
 
