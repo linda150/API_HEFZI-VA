@@ -3,7 +3,7 @@
  * @param {*} app => El objeto de Express que se se creó en el archivo index.js
  */
 
- module.exports = (app) => {
+module.exports = (app) => {
     const productController = require ('../controllers/ProductControllers')
 
     /*VERBOS DE HTTP (http: protocolo de red, por donde se comunica toda la internet, me permite transferir información)

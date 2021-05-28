@@ -15,5 +15,5 @@ module.exports = (app) => {
     app.post('/cliente/create', clienteController.create)
     app.put('/cliente/update/:id', clienteController.update)
     app.get('/cliente/getAll', clienteController.findAll)
-    app.delete('/cliente/deleteOne', clienteController.deleteOne)
+    app.delete('/cliente/deleteOne/:id', clienteController.deleteOne)
 }

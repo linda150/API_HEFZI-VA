@@ -38,9 +38,9 @@ const product = require('../Routes/product')
             res.send(product)
         }
     ).catch(
-        error => {
+        (error) => {
             return res.status(500).send ({
-                message: 'Error al listar los productos'
+                message: ('Error al listar los productos', error.message)
             })
         }
     )
@@ -86,12 +86,12 @@ exports.deleteOne = (req, res) => {
     1=> A quien voy a eliminar */
     productModel.findByIdAndRemove(req.params.id).then(
         productDelete => {
-            res.send (productDeleted)
+            res.send (productDelete)
         }
     ).catch(
-        error =>{
+        (error) =>{
             return res.status(500).send({
-                message: 'No se eliminó ningun producto'
+                message: ('No se eliminó ningun producto', error.message)
             })
         }
     )

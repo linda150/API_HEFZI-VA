@@ -50,9 +50,9 @@ exports.findAll = (req, res) => {
             res.send(clientes)
         }
     ).catch(
-        error => {
+        (error) => {
             return res.status(500).send ({
-                message: 'No se encontraron productos'
+                message: ('No se encontraron productos', error.message)
             })
         }
     )
@@ -97,13 +97,13 @@ exports.deleteOne = (req, res) => {
     /*El findByIdAndRemove recibe un parametro: 
     1=> A quien voy a eliminar */
     clienteModel.findByIdAndRemove(req.params.id).then(
-        clienteDelete => {
+        clienteDeleted => {
             res.send (clienteDeleted)
         }
     ).catch(
-        error =>{
+        (error) =>{
             return res.status(500).send({
-                message: 'No se eliminó ninguna categoria'
+                message: ('No se eliminó ninguna categoria', error.message)
             })
         }
     )
